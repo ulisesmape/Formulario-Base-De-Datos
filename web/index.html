@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script>
+            function validaUsr(){
+                
+                var nom = document.getElementById('usuario');
+                var pswd = document.getElementById('psw');
+                var todoOK = false;
+                
+                if(nom.value != "" && pswd.value != ""){                    
+                    todoOK = true;
+                }
+                
+                if(todoOK){
+                    return confirm('esta seguro?');
+                }
+                else{
+                    alert('revisa los datos');
+                    return todoOK;
+                }
+                
+                
+            }
+            
+            function validaCampos(){
+                return confirm('esta seguro?');
+            }
+        </script>
+    </head>
+    <body>
+        <div id="pagina">
+            <div id="encabezado">
+                logo slogan draks
+            </div>
+            <div id="contenido">
+                <div id="login">
+                    <form id="formLg" action="valida.jsp" method="POST" onsubmit="return validaUsr();">
+                        <label for="usuario">Escribe tu nombre</label>
+                        
+                        <input type="text" id="usuario" name="usuario" required placeholder="escribe tu nombre" /><br />
+                        <label for="psw">Escribe tu psw</label>
+                        <input type="password" id="psw" name="psw" required placeholder="escribe tu psw" /><br />
+                        <input type="submit" id="btnEntrar" name="btnEntrar" value="oc" />
+                    </form>
+                </div>
+                
+                <div id="regUsr">
+                    <form id="frmRegistro" method="POST" action="valida.jsp" onsubmit="return validaCampos();">
+                        <h3>llena los siguientes datos</h3>
+                        <div id="datosFrm">
+                            <label for="nombre">escribe el nombre</label>
+                            <input type="text" id="nombre" name="nombre" required placeholder="escribe el nombre" /><br />
+                            <label for="apellidos">escribe apellidos</label>
+                            <input type="text" id="apellidos" name="apellidos" required placeholder="escribe apellidos" /><br />
+                            <label for="psw2">escribe psw</label>
+                            <input type="password" id="psw2" name="psw2" required placeholder="escribe el psw" /><br />
+                            <label for="mail">escribe el mail</label>
+                            <input type="email" id="mail" name="mail" required placeholder="escribe el mail" /><br />
+                            <label for="genero">escribe el genero</label>
+                            <select id="genero" name="genero">
+                                <option value="0">Femenino</option>
+                                <option value="1">Masculino</option>
+                                <option value="2">Indefinido</option>
+                            </select><br />
+                            <label for="fecha">escribe el fecha</label>
+                            <input type="date" id="fecha" name="fecha" required /><br />
+                            <input type="submit" id="btnReg" name="btnReg" value="registra" />
+                        </div>
+                    </form>                    
+                </div>
+            </div>
+            <div id="footer">
+                redes sociales contacos promo viernes etc 
+            </div>
+        </div>
+    </body>
+</html>
